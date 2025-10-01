@@ -62,16 +62,16 @@ function checkWin(borad, turn) {
     for(let line of lines){
         let win = true;
         for(let pos of line) {
-            const [row, col] = pos;
-            if(board[row][col] !== turn)
+            const [row, col] = pos
+            if(board[row][col] !== turn) {
                 win = false
                 break
+            }
         }
         if(win)
             return true
-        else
-            return false
     }
+    return false
 }
 
 
@@ -96,7 +96,7 @@ while(moveCount < 9) {
     const win = checkWin(board, turn)
     if(win) {
         console.log(turn, " has won !!!!")
-        break
+        break;
     }
 
     // toggle every time 
@@ -107,3 +107,4 @@ while(moveCount < 9) {
 
     moveCount ++
 }
+
